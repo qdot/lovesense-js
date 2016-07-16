@@ -1,0 +1,37 @@
+{
+  "name": "lovesense",
+  "version": "0.0.1",
+  "description": "Javascript/Node.js drivers and protocol implementation for Lovense Products (Max, Nora, Lush, Hush, etc...)",
+  "main": "index.js",
+  "scripts": {
+    "generate-docs": "node_modules/.bin/jsdoc --configure doc/conf.json --verbose",
+    "test": "mocha tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metafetish/lovesense-js.git"
+  },
+  "keywords": [
+    "sextoy",
+    "lovense",
+    "driver",
+    "hardware",
+    "serial"
+  ],
+  "author": "The Metafetish Project",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/metafetish/lovesense-js/issues",
+    "email": "kyle@machul.is"
+  },
+  "homepage": "https://github.com/metafetish/lovesense-js#readme",
+  "dependencies": {
+    "marcosc-async": "^3.0.0",
+    "serialport": "4.x"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "minami": "^1.1.1",
+    "mocha": "^2.5.3"
+  }
+}
