@@ -1,5 +1,7 @@
 # lovesense
 
+[![Build Status](https://img.shields.io/travis/metafetish/lovesense-js.svg)](https://travis-ci.org/metafetish/lovesense-js) [![npm](https://img.shields.io/npm/v/lovesense.svg)](https://npmjs.com/package/lovesense)
+
 lovesense is a library for controlling Lovense sex toys, such as the
 Max, Nora, and Lush. The library allows users to control all aspects
 of the toy (vibration/rotation/inflation, depending on the toy), as
