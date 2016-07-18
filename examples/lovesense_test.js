@@ -10,6 +10,8 @@ args
   .option('-v, --vibrate [vibrate]', 'Speed to vibrate at', parseInt)
   .option('-r, --rotate [rotate]', 'Speed to rotate at', parseInt)
   .option('-a, --air [air]', 'Air level to move to', parseInt)
+  .option('-i, --inflate [inflate]', 'Air level to inflate to', parseInt)
+  .option('-d, --deflate [inflate]', 'Air level to deflate to', parseInt)
   .parse(process.argv);
 
 if (args.port === undefined) {
@@ -22,15 +24,23 @@ async.task(function*() {
   yield l.open();
   if (args.vibrate !== undefined) {
     console.log('setting vibrate speed!');
-    l.vibrate(args.vibrate);
+    yield l.vibrate(args.vibrate);
   }
   if (args.rotate !== undefined) {
-    console.log('setting vibrate speed!');
-    l.rotate(args.rotate);
+    console.log('setting rotate speed!');
+    yield l.rotate(args.rotate);
   }
   if (args.air !== undefined) {
     console.log('setting air level!');
-    l.airlevel(args.air);
+    yield l.air(args.air);
+  }
+  if (args.inflate !== undefined) {
+    console.log('setting air level!');
+    yield l.inflate(args.inflate);
+  }
+  if (args.deflate !== undefined) {
+    console.log('setting air level!');
+    yield l.deflate(args.deflate);
   }
   if (args.battery !== undefined) {
     console.log('waiting for battery level!');
@@ -39,4 +49,4 @@ async.task(function*() {
   }
   yield l.close();
   console.log('closed!');
-});
+}).catch((err) => console.log(err)) ;
