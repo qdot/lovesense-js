@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/metafetish/lovesense-js#readme",
   "dependencies": {
+    "commander": "^2.9.0",
     "marcosc-async": "^3.0.0",
     "serialport": "4.x"
   },
