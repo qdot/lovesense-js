@@ -1,6 +1,6 @@
 {
   "name": "lovesense",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Javascript/Node.js drivers and protocol implementation for Lovense Products (Max, Nora, Lush, Hush, etc...)",
   "main": "index.js",
   "scripts": {
