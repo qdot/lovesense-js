@@ -29,7 +29,8 @@
   "dependencies": {
     "commander": "^2.9.0",
     "marcosc-async": "^3.0.0",
-    "serialport": "4.x"
+    "serialport": "4.x",
+    "virtual-serialport": "git+https://github.com/qdot/virtual-serialport.git"
   },
   "devDependencies": {
     "chai": "^3.5.0",
