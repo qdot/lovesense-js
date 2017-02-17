@@ -2,11 +2,11 @@
 
 [![Build Status](https://img.shields.io/travis/metafetish/lovesense-js.svg)](https://travis-ci.org/metafetish/lovesense-js) [![npm](https://img.shields.io/npm/v/lovesense.svg)](https://npmjs.com/package/lovesense) [![codeclimate coverage](https://codeclimate.com/github/metafetish/lovesense-js/badges/coverage.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![codeclimate health](https://codeclimate.com/github/metafetish/lovesense-js/badges/gpa.svg)](https://codeclimate.com/github/metafetish/lovesense-js)
 
-lovesense is a library for controlling Lovense sex toys, such as the
-Max, Nora, and Lush. The library allows users to control all aspects
-of the toy (vibration/rotation/inflation, depending on the toy), as
-well as retrieving information like device type, status, battery
-level, and accelerometer readings.
+lovesense is a library for controlling Lovense sex toys. The library
+allows users to control all aspects of the toy
+(vibration/rotation/inflation, depending on the toy), as well as
+retrieving information like device type, status, battery level, and
+accelerometer readings.
 
 The library is currently available in the following languages:
 
@@ -29,58 +29,39 @@ If you require commercial support for programming for Lovense
 products, it is recommended you go through the
 [Official Lovense Developer Program](https://www.lovense.com/sextoys/developer).
 
-## Javascript/Node.js Library
+## Javascript/Node.js Library and Platform Support
 
-lovesense-js requires the serialport library if you want to actually
-connect via serial. This dependency should be installed via npm.
+lovense-js is written to handle communications with Lovense toys
+across both node.js and web technologies like WebBluetooth. Depending
+on the desired toy, it can be used in local node applications, or on
+webpages.
 
-However, the library is built to abstract the raw box protocols from
-the communication medium, so it can pass packets for each box over
-whatever medium you like. For instance, you could create a network
-class that talks to a daemon that communicates with a serial port, if
-needed.
+As a node.js library, lovesense-js can be used on the following
+platforms with the toys listed:
+
+- Windows - Support for Max, Nora, Lush toys available out of the box.
+  Supports all Lovense toys if
+  [noble + libusb + bluetooth dongle setup](https://github.com/sandeepmistry/node-bluetooth-hci-socket#windows) is
+  used. Support for Windows 10 BLE coming in February.
+- macOS - All lovense toys, assuming macOS 10.6+
+- linux - All lovense toys, assuming bluez > 5.42
+
+As a web library using WebBluetooth, lovesense-js can be used on the
+following platforms with the Bluetooth LE based toys listed:
+
+- Windows - No support currently. Waiting for Chrome to have Windows
+  bluetooth support.
+- macOS - Hush, Osci, Ambi, Edge, Domi, using Chrome 56+
+- linux - Hush, Osci, Ambi, Edge, Domi, using Chrome 56+ (with
+  experimental web extensions turned on) and bluez > 5.42,
 
 ## Protocol Explanation
 
-Lovense toys connect via bluetooth, and then use the Serial Port
-Profile (SPP) to communicate with the host. This means that the toys
-are exposed as either COM Ports (windows) or tty devices
-(posix/bsd/etc). 
+Protocol documentation is available
+at
+[the lovesense-docs site on readthedocs.org](https://lovesense-docs.readthedocs.org/).
 
-### Protocol Rules
-
-* Commands and replies are strings, using semicolons to mark their end.
-* All commands start with a command identifier word, then possibly
-  either specifiers or levels, delimited by colons. e.g. "Vibrate:5;"
-  would set vibration to 5.
-* Replies are in the context of the command (i.e. sending "Battery;"
-  will just return a number, like "85;"), but can still be colon
-  delimited lists.
-
-### Command Table
-
-The following is the known command table for all toys. Anything send
-or received over the serial port is in quotes to denote communication,
-but should not be sent using quotes if you are implementing your own
-version of this protocol. Commands with ":x" mean that the x should be
-replaced with a number, the range of which is mentioned in the
-description.
-
-| Command         | Description                                                                                                         | Expected Return                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| "DeviceType;"   | Returns toy type (A: Lush, B: Max, C: Nora), Firmware version, and bluetooth MAC address, as a colon delimited list | String, e.g. "C:11:0082059AD3BD;"                                                                    |
-| "Battery;"      | Returns battery level of toy                                                                                        | Number, e.g. "85;" meaning 85% battery left                                                          |
-| "PowerOff;"     | Powers the device off                                                                                               | "OK;"                                                                                                |
-| "Status:1;"     | Shows device status. 2 is "normal"                                                                                  | "2;"                                                                                                 |
-| "StartMove:1;"  | Starts accelerometer data stream.                                                                                   | String, that always starts with 'G', followed by 3 16-bit little-endian numbers e.g. "GEF008312ED00" |
-| "StopMove:1;"   | Stops accelerometer data stream                                                                                     | "OK;"                                                                                                |
-| "RotateChange;" | Changes the direction of rotation for the stimulator on the Nora toy.                                               | "OK;"                                                                                                |
-| "Vibrate:x;"    | Sets vibration level for toy. Range seems to be 0-20.                                                               | "OK;"                                                                                                |
-| "Rotate:x;"     | Sets rotation speed for Nora toy. Range seems to be 0-20.                                                           | "OK;"                                                                                                |
-| "Air:Level:x;"  | Sets absolute air level for Max toy. Range seems to be 0-5;                                                         | "OK;"                                                                                                |
-| "Air:In:x;"     | Sets relative inflation level, i.e. if currently inflation level is 3, and "Air:In:1" is sent, will inflate to 4    | "OK;"                                                                                                |
-| "Air:Out:x;"    | Sets relative deflation level, i.e. if currently inflation level is 3, and "Air:Out:1" is sent, will inflate to 2   | "OK;"                                                                                                |
-
+The protocol documentation repository is available [at metafetish/lovesense-docs on github](http://github.com/metafetish/lovesense-docs).
 
 ## Thanks
 
