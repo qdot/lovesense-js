@@ -1,6 +1,6 @@
 # lovesense
 
-[![Build Status](https://img.shields.io/travis/metafetish/lovesense-js.svg)](https://travis-ci.org/metafetish/lovesense-js) [![npm](https://img.shields.io/npm/v/lovesense.svg)](https://npmjs.com/package/lovesense) [![codeclimate coverage](https://codeclimate.com/github/metafetish/lovesense-js/badges/coverage.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![codeclimate health](https://codeclimate.com/github/metafetish/lovesense-js/badges/gpa.svg)](https://codeclimate.com/github/metafetish/lovesense-js)
+[![Build Status](https://img.shields.io/travis/metafetish/lovesense-js.svg)](https://travis-ci.org/metafetish/lovesense-js) [![npm](https://img.shields.io/npm/v/lovesense.svg)](https://npmjs.com/package/lovesense) [![codeclimate coverage](https://codeclimate.com/github/metafetish/lovesense-js/badges/coverage.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![codeclimate health](https://codeclimate.com/github/metafetish/lovesense-js/badges/gpa.svg)](https://codeclimate.com/github/metafetish/lovesense-js)[![Patreon donate button](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/qdot)
 
 lovesense is a library for controlling Lovense sex toys. The library
 allows users to control all aspects of the toy
@@ -53,7 +53,9 @@ following platforms with the Bluetooth LE based toys listed:
   bluetooth support.
 - macOS - Hush, Osci, Ambi, Edge, Domi, using Chrome 56+
 - linux - Hush, Osci, Ambi, Edge, Domi, using Chrome 56+ (with
-  experimental web extensions turned on) and bluez > 5.42,
+  experimental web extensions turned on) and bluez > 5.42
+- Android - Supported using Android M
+- ChromeOS - Supported
 
 ## Protocol Explanation
 
@@ -62,6 +64,14 @@ at
 [the lovesense-docs site on readthedocs.org](https://lovesense-docs.readthedocs.org/).
 
 The protocol documentation repository is available [at metafetish/lovesense-docs on github](http://github.com/metafetish/lovesense-docs).
+
+## Support The Project
+
+If you find this project helpful, you
+can
+[support Metafetish projects via Patreon](http://patreon.com/qdot)!
+Every donation helps us afford more hardware to reverse, document, and
+write code for!
 
 ## Thanks
 
