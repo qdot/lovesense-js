@@ -1,6 +1,6 @@
-# lovesense
+# lovesense-js
 
-[![Build Status](https://img.shields.io/travis/metafetish/lovesense-js.svg)](https://travis-ci.org/metafetish/lovesense-js) [![npm](https://img.shields.io/npm/v/lovesense.svg)](https://npmjs.com/package/lovesense) [![codeclimate coverage](https://codeclimate.com/github/metafetish/lovesense-js/badges/coverage.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![codeclimate health](https://codeclimate.com/github/metafetish/lovesense-js/badges/gpa.svg)](https://codeclimate.com/github/metafetish/lovesense-js)[![Patreon donate button](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/qdot)
+[![Build Status](https://img.shields.io/travis/metafetish/lovesense-js.svg)](https://travis-ci.org/metafetish/lovesense-js) [![npm](https://img.shields.io/npm/v/lovesense.svg)](https://npmjs.com/package/lovesense) [![codeclimate coverage](https://codeclimate.com/github/metafetish/lovesense-js/badges/coverage.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![codeclimate health](https://codeclimate.com/github/metafetish/lovesense-js/badges/gpa.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![Patreon donate button](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/qdot)
 
 lovesense is a library for controlling Lovense sex toys. The library
 allows users to control all aspects of the toy
