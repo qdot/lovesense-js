@@ -1,4 +1,10 @@
-# lovesense-js
+# lovesense-js - DEPRECATED - USE https://buttplug.io
+
+This repo/project is now deprecated and in archive mode. All further
+updates are happening in the Buttplug library at
+[https://buttplug.io](https://buttplug.io). If you are looking for a
+javascript way to access toys, check out [buttplug-js on
+github](https://github.com/buttplugio/buttplug-js).
 
 [![Build Status](https://img.shields.io/travis/metafetish/lovesense-js.svg)](https://travis-ci.org/metafetish/lovesense-js) [![npm](https://img.shields.io/npm/v/lovesense.svg)](https://npmjs.com/package/lovesense) [![codeclimate coverage](https://codeclimate.com/github/metafetish/lovesense-js/badges/coverage.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![codeclimate health](https://codeclimate.com/github/metafetish/lovesense-js/badges/gpa.svg)](https://codeclimate.com/github/metafetish/lovesense-js) [![Patreon donate button](https://img.shields.io/badge/patreon-donate-yellow.svg)](https://www.patreon.com/qdot)
 
